@@ -7,7 +7,8 @@ import {PageNotFoundComponent} from './shared/page-not-found/page-not-found.comp
 const routes: Routes = [
   {path: 'pokemon', component: ListPokemonComponent},
   {path: 'pokemon/:id', component: DetailPokemonComponent },
-  {path: '', component: PageNotFoundComponent }
+  {path: '', redirectTo: 'pokemon', pathMatch: 'full' },
+  {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
