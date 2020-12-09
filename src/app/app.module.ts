@@ -7,7 +7,7 @@ import { ListPokemonComponent } from './pokemons/list-pokemon/list-pokemon.compo
 import {FormsModule} from '@angular/forms';
 import { BorderCardDirective } from './shared/directives/border-card.directive';
 import { PokemonTypeColorPipe } from './shared/pipes/pokemon-type-color.pipe';
-import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
+import { DetailPokemonComponent } from './pokemons/detail-pokemon/detail-pokemon.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 @NgModule({
