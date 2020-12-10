@@ -32,4 +32,9 @@ export class DetailPokemonComponent implements OnInit {
     const link = ['/pokemon'];
     this.router.navigate(link);
   }
+  OnClickEdit(): void{
+    const id = +this.route.snapshot.paramMap.get('id');
+    const link = ['/pokemon',  'edit', id];
+    this.router.navigate(link);
+  }
 }
