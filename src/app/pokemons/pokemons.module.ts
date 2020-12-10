@@ -5,6 +5,7 @@ import {DetailPokemonComponent} from './detail-pokemon/detail-pokemon.component'
 import {BrowserModule} from '@angular/platform-browser';
 import {BorderCardDirective} from '../shared/directives/border-card.directive';
 import {PokemonTypeColorPipe} from '../shared/pipes/pokemon-type-color.pipe';
+import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 
 
 
@@ -13,7 +14,8 @@ import {PokemonTypeColorPipe} from '../shared/pipes/pokemon-type-color.pipe';
     ListPokemonComponent,
     DetailPokemonComponent,
     BorderCardDirective,
-    PokemonTypeColorPipe
+    PokemonTypeColorPipe,
+    PokemonFormComponent
   ],
   imports: [
     BrowserModule
