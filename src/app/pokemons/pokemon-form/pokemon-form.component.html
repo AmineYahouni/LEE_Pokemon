@@ -5,7 +5,8 @@
 <!-- ngIf: permet de s'assurer qu'un pokemon a bien été transmis au composant du formulaire,
     Dans le cas contraire, on affiche un msg d'erreur.
 -->
-<form *ngIf="pokemon" (ngSubmit)="onSubmit()" #pokemonForm="ngForm">
+<form *ngIf="pokemon" (ngSubmit)="onSubmit()" #pokemonForm="ngForm" xmlns:border-left="http://www.w3.org/1999/xhtml"
+      xmlns:border-left="http://www.w3.org/1999/xhtml" xmlns:.ng-invalid="http://www.w3.org/1999/xhtml">
   <div class="row">
     <div class="col s8 offset-s2">
       <div class="card-panel">
@@ -16,6 +17,9 @@
           <input type="text" class="form-control" id="name"
                  [(ngModel)]="pokemon.name" name="name"
                  #name="ngModel" required pattern="^[a-zA-Z0-9àéèç]{1,25}$">
+          <div [hidden]="name.valid || name.pristine" class="card-panel red accent-1">
+            Le nom du pokémon est requis (1-25)
+          </div>
         </div>
 
         <!-- Pokemon hp -->
@@ -24,6 +28,9 @@
           <input type="number" class="form-control" id="hp"
                  [(ngModel)]="pokemon.hp" name="hp"
                  #hp="ngModel" pattern="^[0-9]{1,2}$">
+          <div [hidden]="hp.valid || hp.pristine" class="card-panel red accent-1">
+            Les points de vie du pokémon sont compris entre 0 et 99.
+          </div>
         </div>
 
         <!-- Pokemon cp -->
@@ -32,6 +39,9 @@
           <input type="number" class="form-control" id="cp"
                  [(ngModel)]="pokemon.cp" name="cp"
                  #cp="ngModel" pattern="^[0-9à]{1,2}$">
+          <div [hidden]="cp.valid || cp.pristine" class="card-panel red accent-1">
+            Les  dégâts du pokémon sont compris entre 0 et 99.
+          </div>
         </div>
 
         <!-- Pokemon types -->
@@ -70,4 +80,3 @@
   </div>
 </form>
 <h3 *ngIf="!pokemon" class="center">Aucun pokémon à éditer...</h3>
-
