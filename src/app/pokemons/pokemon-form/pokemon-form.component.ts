@@ -24,10 +24,10 @@ export class PokemonFormComponent implements OnInit {
 
   selectType($event: any, type: string): void {
     const checked = $event.target.checked;
-    if(checked) {
+    if (checked) {
       this.pokemon.types.push(type);
     }else {
-      const index =this.pokemon.types.indexOf(type);
+      const index = this.pokemon.types.indexOf(type);
       if (index > -1) {
         this.pokemon.types.splice(index, 1);
       }
@@ -38,6 +38,16 @@ export class PokemonFormComponent implements OnInit {
     console.log('submit form ! ');
     const link = ['/pokemon', this.pokemon.id];
     this.router.navigate(link);
+  }
+
+  isTypeValid(type: string): boolean {
+    if (this.pokemon.types.length === 1 && this.hasType(type)) {
+      return false;
+    }
+    if (this.pokemon.types.length >= 3 && !this.hasType(type)) {
+      return false;
+    }
+    return true;
   }
 
 }
