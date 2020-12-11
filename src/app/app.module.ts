@@ -4,10 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
-import { BorderCardDirective } from './shared/directives/border-card.directive';
-import { PokemonTypeColorPipe } from './shared/pipes/pokemon-type-color.pipe';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import {PokemonsModule} from './pokemons/pokemons.module';
+import {HttpClientModule} from '@angular/common/http';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './shared/in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,8 @@ import {PokemonsModule} from './pokemons/pokemons.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false}),
     AppRoutingModule,
     FormsModule,
     PokemonsModule

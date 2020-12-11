@@ -5,6 +5,7 @@ import {DetailPokemonComponent} from './pokemons/detail-pokemon/detail-pokemon.c
 import {PageNotFoundComponent} from './shared/page-not-found/page-not-found.component';
 import {PokemonFormComponent} from './pokemons/pokemon-form/pokemon-form.component';
 import {PokemonEditComponent} from './pokemons/pokemon-edit/pokemon-edit.component';
+import {SearchPokemonComponent} from './pokemons/search-pokemon/search-pokemon.component';
 
 const routes: Routes = [
   {path: 'pokemon', component: ListPokemonComponent},
